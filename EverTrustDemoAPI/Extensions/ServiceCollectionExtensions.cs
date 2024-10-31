@@ -26,6 +26,7 @@ namespace EverTrustDemoAPI.Extensions
         {
             services.AddScoped(typeof(IService<>), typeof(MSService<>));
             services.AddScoped<IEmployeeService,EmployeeService>();
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddTransient<EncryptHelper>();
             services.AddTransient<JwtHelper>();
             return services;

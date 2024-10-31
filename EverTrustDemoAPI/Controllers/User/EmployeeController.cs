@@ -18,7 +18,7 @@ namespace EverTrustDemoAPI.Controllers.Business
 {
     [ApiController]
     [Route("api/User")]
-    //[Authorize(Policy = "Demo")]
+    [Authorize(Policy = "Demo")]
     public class EmployeeController : ControllerBase
     {
         private readonly ILogger<EmployeeController> _logger;
