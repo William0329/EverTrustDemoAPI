@@ -1,0 +1,6 @@
+@EverTrustDemoAPI_HostAddress = http://localhost:5070
+
+GET {{EverTrustDemoAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
