@@ -1,13 +1,19 @@
 using EverTrustDemoAPI.Extensions;
 
 using Microsoft.EntityFrameworkCore;
+using Serilog;
+
 using System;
 using System.Reflection;
 
 using TverTrustDemoModel.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Host.UseSerilog((HostBuilderContext hostingContext, IServiceProvider services, LoggerConfiguration loggerConfiguration) =>
+{
+    //使用appsetting
+    loggerConfiguration.ReadFrom.Configuration(builder.Configuration);
+});
 // Add services to the container.
 builder.Services.AddCors(builder.Configuration);
 builder.Services.AddControllers();
